@@ -22,8 +22,22 @@ public class UserProfileActivity extends AppCompatActivity {
                 Log.d("Name",fullName);
                 edtFullName.setText(" ");
 
-//                android:id="@+id/edt_student_id"
+                EditText edtStudentNumber = findViewById(R.id.edt_student_id);
+                String StudentNumber=edtStudentNumber.getText().toString();
+                Log.d("Student Number",StudentNumber);
+                edtStudentNumber.setText(" ");
+
+                EditText edtEmail = findViewById(R.id.edt_email_address);
+                String Email=edtEmail.getText().toString();
+                Log.d("Student Number",Email);
+                edtEmail.setText(" ");
+
+                EditText edtCourseName = findViewById(R.id.edt_course_name);
+                String CourseName = edtCourseName.getText().toString();
+                Log.d("Student Course", CourseName);
+                edtCourseName.setText(" ");
             }
         });
+
     }
 }

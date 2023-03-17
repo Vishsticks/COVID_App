@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <resources>
+        <string-array name="covid_points">
+            <item>Shivering or chills</item>
+            <item>A new, continuous cough</item>
+            <item>A loss or change to your sense of smell or taste</item>
+            <item>Shortness of breath</item>
+            <item>Feeling tired or exhausted</item>
+            <item>An aching body</item>
+            <item>A headache</item>
+            <item>A sore throat</item>
+            <item>A blocked or runny nose</item>
+            <item>Loss of appetite</item>
+            <item>Diarrhoea</item>
+            <item>Feeling Sick oe being sick</item>
+        </string-array>
+    </resources>
+
+</PreferenceScreen>

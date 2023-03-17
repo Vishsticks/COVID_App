@@ -22,8 +22,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, CovidGuidlinesActivity.class));
+            }
+        });
 
-                //test
+        findViewById(R.id.txt_symptom_checker).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SymptomChecker.class));
             }
         });
     }
