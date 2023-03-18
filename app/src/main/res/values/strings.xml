@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">COVID_App</string>
+    <string name="str_check_in">Check In</string>
+    <string name="str_check_out">Check out</string>
 </resources>

@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
                 //test
             }
         });
+        findViewById(R.id.txt_location_check_in).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,LocationCheckInActivity.class));
+            }
+        });
     }
 }
 
