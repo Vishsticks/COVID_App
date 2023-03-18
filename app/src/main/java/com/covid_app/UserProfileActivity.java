@@ -60,7 +60,7 @@ public class UserProfileActivity extends AppCompatActivity {
                                     if (insertedId != -1) {
                                         Toast.makeText(UserProfileActivity.this, "Record saved.", Toast.LENGTH_SHORT).show();
                                         clearData();
-                                    }else{
+                                    } else {
                                         Toast.makeText(UserProfileActivity.this, "Student Id already exist.", Toast.LENGTH_SHORT).show();
                                     }
                                 }
@@ -70,6 +70,7 @@ public class UserProfileActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     void clearData() {

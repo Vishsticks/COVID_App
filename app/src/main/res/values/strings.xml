@@ -2,4 +2,18 @@
     <string name="app_name">COVID_App</string>
     <string name="str_check_in">Check In</string>
     <string name="str_check_out">Check out</string>
+    <string name="str_symptoms">
+        ▪ Shivering or chills\n
+        ▪ A new, continuous cough\n
+        ▪ A loss or change to your sense of smell or taste\n
+        ▪ Shortness of breath\n
+        ▪ Feeling tired or exhausted\n
+        ▪ An aching body\n
+        ▪ A headache\n
+        ▪ A sore throat\n
+        ▪ A blocked or runny nose\n
+        ▪ Loss of appetite\n
+        ▪ Diarrhoea\n
+        ▪ Feeling Sick oe being sick.
+    </string>
 </resources>
