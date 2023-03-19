@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -19,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.COVID_App"
         tools:targetApi="31">
+        <activity
+            android:name=".PPEMonitorUsageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CovidGuildlinesActivity"
+            android:exported="false" />
         <activity android:name=".QRCodeScannerActivity" />
         <activity
             android:name=".LocationCheckInActivity"
