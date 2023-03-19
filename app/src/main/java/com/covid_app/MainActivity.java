@@ -37,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,LocationCheckInActivity.class));
             }
         });
+
+        findViewById(R.id.txt_PPE_usage_monitor).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, PPEMonitorUsageActivity.class));
+            }
+        });
+
+
     }
 }
 
