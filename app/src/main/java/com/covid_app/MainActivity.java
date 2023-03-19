@@ -1,13 +1,13 @@
 package com.covid_app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.nearby.Nearby;
 import com.google.android.gms.nearby.messages.BleSignal;
@@ -25,38 +25,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.txt_user_profile).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, UserProfileActivity.class));
-            }
-        });
-        findViewById(R.id.txt_guildlines).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, CovidGuidlinesActivity.class));
-            }
-        });
+        initialise();
+        initListeners();
+    }
 
-        findViewById(R.id.txt_symptom_checker).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SymptomChecker.class));
-            }
-        });
-        findViewById(R.id.txt_location_check_in).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, LocationCheckInActivity.class));
-            }
-        });
-
-        findViewById(R.id.txt_PPE_usage_monitor).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, PPEMonitorUsageActivity.class));
-            }
-        });
+    private void initialise() {
 
         messageListener = new MessageListener() {
             @Override
@@ -87,7 +60,53 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "onLost callback", Toast.LENGTH_SHORT).show();
             }
         };
+
         message = new Message("Hello".getBytes(StandardCharsets.UTF_8));
+    }
+
+    private void initListeners() {
+
+        findViewById(R.id.txt_user_profile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, UserProfileActivity.class));
+            }
+        });
+
+        findViewById(R.id.txt_guildlines).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CovidGuidlinesActivity.class));
+            }
+        });
+
+        findViewById(R.id.txt_symptom_checker).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SymptomsCheckerActivity.class));
+            }
+        });
+
+        findViewById(R.id.txt_location_check_in).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LocationCheckInActivity.class));
+            }
+        });
+
+        findViewById(R.id.txt_PPE_usage_monitor).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, PPEMonitorUsageActivity.class));
+            }
+        });
+
+        findViewById(R.id.txt_exposure_notifitcation).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ExposureNotificationActivity.class));
+            }
+        });
     }
 
     @Override
