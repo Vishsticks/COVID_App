@@ -62,11 +62,6 @@ public class UserProfileActivity extends AppCompatActivity {
                     Toast.makeText(UserProfileActivity.this, "Please fill details.", Toast.LENGTH_SHORT).show();
                 } else {
                     Student student = new Student(studentId, fullName, emailAddress, courseName);
-//                    HashMap<String, Object> studentRecord = new HashMap<>();
-//                    studentRecord.put(Constants.UsersCollection.name, fullName);
-//                    studentRecord.put(Constants.UsersCollection.studentId, studentId);
-//                    studentRecord.put(Constants.UsersCollection.email, emailAddress);
-//                    studentRecord.put(Constants.UsersCollection.courseName, courseName);
 
                     database.collection(Constants.DbCollection.COLLECTION_USERS)
                             .add(student)

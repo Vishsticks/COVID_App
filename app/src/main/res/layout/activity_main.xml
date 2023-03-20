@@ -9,14 +9,13 @@
 
     <ImageView
         android:id="@+id/img_qm_logo"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/qm_logo_2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="20dp"
-        />
+        android:src="@drawable/qm_logo_2"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_left"
@@ -38,8 +37,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="COVID-19 Guidelines"
         android:background="@drawable/back_button"
+        android:text="COVID-19 Guidelines"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline_right"
         app:layout_constraintStart_toEndOf="@id/guideline_left"
@@ -93,35 +92,36 @@
         android:id="@+id/txt_greet_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="COVID-19 Health Tracker"
         android:layout_marginTop="20dp"
+        android:text="COVID-19 Health Tracker"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_qm_logo"
-        android:textStyle="bold"
-        android:textSize="20sp" />
+        app:layout_constraintTop_toBottomOf="@id/img_qm_logo" />
 
     <TextView
         android:id="@+id/txt_user_profile"
         style="@style/DashboardButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="50dp"
         android:text="User profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@id/txt_score" />
 
     <TextView
         android:id="@+id/txt_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="Score: "
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_greet_user"
-        android:layout_marginTop="50dp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/txt_greet_user" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
