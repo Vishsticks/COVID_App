@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <ImageView
@@ -17,54 +18,75 @@
         android:layout_marginTop="20dp"
         />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
     <TextView
         android:id="@+id/txt_guildlines"
-        android:layout_width="wrap_content"
+        style="@style/DashboardButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="COVID-19 Guidelines"
+        android:background="@drawable/back_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/txt_user_profile" />
 
     <TextView
         android:id="@+id/txt_location_check_in"
-        android:layout_width="wrap_content"
+        style="@style/DashboardButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+
+        android:gravity="center"
         android:text="Location Check In"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/txt_guildlines" />
 
     <TextView
         android:id="@+id/txt_symptom_checker"
-        android:layout_width="wrap_content"
+        style="@style/DashboardButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:text="Symptom Checker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/txt_location_check_in" />
 
     <TextView
         android:id="@+id/txt_exposure_notifitcation"
-        android:layout_width="wrap_content"
+        style="@style/DashboardButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:gravity="center"
         android:text="Exposure Notification"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/txt_symptom_checker" />
 
     <TextView
         android:id="@+id/txt_PPE_usage_monitor"
-        android:layout_width="wrap_content"
+        style="@style/DashboardButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:text="PPE usage monitor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_right"
+        app:layout_constraintStart_toEndOf="@id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/txt_exposure_notifitcation" />
 
     <TextView
@@ -81,13 +103,13 @@
 
     <TextView
         android:id="@+id/txt_user_profile"
-        android:layout_width="wrap_content"
+        style="@style/DashboardButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:text="User profile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_greet_user" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txt_score"

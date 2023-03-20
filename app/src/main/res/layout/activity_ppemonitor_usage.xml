@@ -8,55 +8,52 @@
 
     <ImageView
         android:id="@+id/img_picture"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"
-        android:background="#D3D3D3D3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="120dp"
+        android:background="#D3D3D3"
         android:src="@drawable/mask_picture"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_mask_picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/back_button"
         android:text="Submit picture"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_picture"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_picture" />
 
     <TextView
         android:id="@+id/txt_scan_santizer"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_mask_picture"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/shape_round_button"
-        android:text="Scan Sanitizer"
-        android:textSize="30sp"
         android:gravity="center"
+        android:text="Scan Sanitizer"
         android:textColor="@color/white"
-        />
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_mask_picture" />
 
     <Button
         android:id="@+id/btn_report_problem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Report problem with sanitizer station"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_scan_santizer"
         android:layout_marginTop="25dp"
-        />
-
+        android:background="@drawable/back_button"
+        android:text="Report problem with sanitizer station"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_scan_santizer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--Submit Mask Picture-->
-<!--Scan sanitzer station-->
-<!--Report problem with stations-->

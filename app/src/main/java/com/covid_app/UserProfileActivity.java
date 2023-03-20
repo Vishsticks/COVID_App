@@ -1,23 +1,33 @@
 package com.covid_app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.covid_app.room.AppDatabase;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.covid_app.room.AppDatabaseBuilder;
 import com.covid_app.room.Student;
 import com.covid_app.room.StudentDao;
 import com.covid_app.room.StudentRepository;
+import com.covid_app.utils.Constants;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
 
 public class UserProfileActivity extends AppCompatActivity {
     private EditText edtFullName, edtStudentId, edtEmailAddress, edtCourseName;
     private StudentDao studentDao;
     private StudentRepository studentRepository;
+    private FirebaseFirestore database;
+
+    private String TAG = UserProfileActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +45,8 @@ public class UserProfileActivity extends AppCompatActivity {
 
         studentDao = AppDatabaseBuilder.getDatabase(UserProfileActivity.this).getStudentDao();
         studentRepository = new StudentRepository(studentDao);
+
+        database = FirebaseFirestore.getInstance();
     }
 
     void initialiseListeners() {
@@ -50,27 +62,34 @@ public class UserProfileActivity extends AppCompatActivity {
                     Toast.makeText(UserProfileActivity.this, "Please fill details.", Toast.LENGTH_SHORT).show();
                 } else {
                     Student student = new Student(studentId, fullName, emailAddress, courseName);
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            long insertedId = studentRepository.insertStudent(student);
-                            runOnUiThread(new Runnable() {
+//                    HashMap<String, Object> studentRecord = new HashMap<>();
+//                    studentRecord.put(Constants.UsersCollection.name, fullName);
+//                    studentRecord.put(Constants.UsersCollection.studentId, studentId);
+//                    studentRecord.put(Constants.UsersCollection.email, emailAddress);
+//                    studentRecord.put(Constants.UsersCollection.courseName, courseName);
+
+                    database.collection(Constants.DbCollection.COLLECTION_USERS)
+                            .add(student)
+                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                                 @Override
-                                public void run() {
-                                    if (insertedId != -1) {
-                                        Toast.makeText(UserProfileActivity.this, "Record saved.", Toast.LENGTH_SHORT).show();
-                                        clearData();
-                                    } else {
-                                        Toast.makeText(UserProfileActivity.this, "Student Id already exist.", Toast.LENGTH_SHORT).show();
-                                    }
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Log.e(TAG, ">>>>> Id ::" + documentReference.getId());
+                                    clearData();
+                                    Toast.makeText(UserProfileActivity.this, "Record saved.", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.e(TAG, ">>>>> Id ::" + e.getLocalizedMessage());
+                                    Toast.makeText(UserProfileActivity.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             });
-                        }
-                    }).start();
                 }
+
             }
         });
-
     }
 
     void clearData() {
