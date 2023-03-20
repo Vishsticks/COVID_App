@@ -6,4 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".CovidGuidlinesActivity">
 
+    <TextView
+        android:id="@+id/txt_guideline_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COVID Guidelines"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/txt_guideline_point_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="These are health and safety guidelines for using the Queen Mary COVID-19 Health Application."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_guideline_heading"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txt_guideline_point_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 1: All students must set up their application user profile in the user profile section of the app."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_guideline_point_1"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txt_guideline_point_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 2: Prior to attending a lecture all students must use the location check-in section of the application to scan a QR code upon entering and leaving a class."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_guideline_point_2"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txt_guideline_point_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 3: Before attending a class, all students must submit a picture of themselves wearing a mask in compliance with the Queen Mary COVID-16 health guidelines. Students must also use hand sanitizer before and after attending a class. To do this, each student must scan a QR code placed next to and automatic sanitizer station. "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_guideline_point_3"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txt_guideline_point_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Symptom Checker: If at any point you feel like you may have COVID-19, please open the symptom checker part of the application. Please answer all questions honestly and this will provide you with guidance. "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_guideline_point_4"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txt_guideline_point_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exposure Notification: If you have been exposed to another student who has tested positive for COVID-19 you will be notified in the Exposure Notification section of the application, this will provide you with next steps according to your exposure notification status. "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_guideline_point_5"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

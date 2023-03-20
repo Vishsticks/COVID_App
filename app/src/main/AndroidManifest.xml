@@ -23,9 +23,6 @@
         <activity
             android:name=".PPEMonitorUsageActivity"
             android:exported="false" />
-        <activity
-            android:name=".CovidGuildlinesActivity"
-            android:exported="false" />
         <activity android:name=".QRCodeScannerActivity" />
         <activity
             android:name=".LocationCheckInActivity"
