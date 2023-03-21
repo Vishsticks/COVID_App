@@ -10,10 +10,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class LocationCheckInActivity extends AppCompatActivity {
     private TextView txtCheckIn;
     private TextView txtCheckOut;
     private int currentType=0;
+
+    private FirebaseFirestore database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,7 @@ public class LocationCheckInActivity extends AppCompatActivity {
     private void initialise() {
         txtCheckIn = findViewById(R.id.txt_check_in);
         txtCheckOut = findViewById(R.id.txt_check_out);
+        database = FirebaseFirestore.getInstance();
     }
 
     private void initialiseListeners() {

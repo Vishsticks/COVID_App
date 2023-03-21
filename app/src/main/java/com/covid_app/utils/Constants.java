@@ -4,6 +4,7 @@ public class Constants {
 
     public interface DbCollection{
         String COLLECTION_USERS="users";
+        String COLLECTION_ATTENDANCE="attendance";
     }
 
     public interface UsersCollection{
