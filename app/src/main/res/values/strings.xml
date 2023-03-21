@@ -27,4 +27,9 @@
 
         Exposure Notification: If you have been exposed to another student who has tested positive for COVID-19 you will be notified in the Exposure Notification section of the application, this will provide you with next steps according to your exposure notification status.
     </string>
+    <string name="no_contact_with_infected_person">You are safe, you have not came in contact with an infected student.</string>
+    <string name="contact_with_infected_person">You are in contact with infected person.</string>
+    <string name="str_already_setup">Already setup</string>
+    <string name="no_record_found_with_userid">No record found with this user id. Please setup your account first.</string>
+    <string name="str_setup">Setup</string>
 </resources>
